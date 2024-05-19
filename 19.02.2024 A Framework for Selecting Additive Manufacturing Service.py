@@ -64,7 +64,7 @@ service_counts = {service: 0 for service in services}
 
 # Define the Sub_services 
 
-Sub_services = ["Explorative service", "Constructive service", "Identative service"] 
+Sub_services = ["Explorative service", "Constructive service", "Decisive service"] 
 
  
 
@@ -419,7 +419,7 @@ elif len(non_zero_count_services) > 1:
 
     if service_counts["Evaluative service"] > 0 and service_counts["Facilitative service"] > 0: 
 
-        Sub_selected_service = "Identative service" 
+        Sub_selected_service = "Decisive service" 
 
         #print(Sub_selected_service) 
 
