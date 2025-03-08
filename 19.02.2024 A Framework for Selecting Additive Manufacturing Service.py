@@ -1,3 +1,5 @@
+
+
 def ask_question(question):
     while True:
         response = input(question + " (yes/no): ").lower()
@@ -42,43 +44,35 @@ questions = [
 
 ] 
 
- 
 
 # Define the services 
 
 services = ["Evaluative service", "Generative service", "Selective service","Facilitative service"] 
-
  
 
 # Initialize a dictionary to keep track of the counts 
 
 service_counts = {service: 0 for service in services} 
-
  
 
 # Define the Sub_services 
 
 Sub_services = ["Explorative service", "Constructive service", "Decisive service"] 
-
  
 
 # Initialize a dictionary to keep track of the counts 
 
 Sub_service_counts = {Sub_service: 0 for Sub_service in Sub_services} 
-
  
 
 # Start with the first question 
 
 current_question_index = 0 
-
  
 
 while current_question_index < len(questions): 
 
     current_question = questions[current_question_index] 
-
- 
 
     if current_question_index == 0: 
 
@@ -105,6 +99,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 1",service_counts)
 
             current_question_index = 7 
 
@@ -128,7 +123,8 @@ while current_question_index < len(questions):
 
             if selected_service in services: 
 
-                service_counts[selected_service] += 1 
+                service_counts[selected_service] += 1
+                #print("QI: 2",service_counts)
 
             current_question_index = 3 
 
@@ -157,6 +153,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 4",service_counts)
 
             current_question_index = 7 
 
@@ -177,6 +174,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 5",service_counts)
 
             current_question_index = 7 
 
@@ -197,6 +195,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 6",service_counts)
 
             current_question_index = 7 
 
@@ -208,31 +207,23 @@ while current_question_index < len(questions):
 
         response = ask_question(current_question) 
 
-        if response == "no": 
+        if response == "yes": 
             
-            current_question_index = 8 
-
-        else: 
-
             print("Design Optimization") 
+            print("Sent for Approval")
 
             selected_service = "Generative service" 
 
             if selected_service in services: 
 
-                if service_counts[selected_service] > 0: 
-
-                    service_counts[selected_service] += 1 
-
-            selected_service = "Selective service" 
-
-            if selected_service in services: 
-
-                if service_counts[selected_service] > 0: 
-
-                    service_counts[selected_service] += 1 
+                service_counts[selected_service] += 1 
+                #print("QI: 7",service_counts)
            
             current_question_index = 7
+
+        else:  
+           
+            current_question_index = 8
 
     elif current_question_index == 8: 
 
@@ -247,6 +238,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 8",service_counts)
 
             current_question_index = 9 
 
@@ -267,6 +259,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 9",service_counts)
 
             current_question_index = 10 
 
@@ -286,7 +279,8 @@ while current_question_index < len(questions):
 
             if selected_service in services: 
 
-                service_counts[selected_service] += 1 
+                service_counts[selected_service] += 1
+                #print("QI: 10",service_counts)
 
             current_question_index = 11 
 
@@ -307,6 +301,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 11",service_counts)
 
             current_question_index = 12 
 
@@ -327,6 +322,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 12",service_counts)
 
             current_question_index = 13 
 
@@ -347,6 +343,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1 
+                #print("QI: 13",service_counts)
           
             current_question_index = 14 
 
@@ -367,6 +364,7 @@ while current_question_index < len(questions):
             if selected_service in services: 
 
                 service_counts[selected_service] += 1
+                #print("QI: 14",service_counts)
                 
         print("Packaging and Shipping")         
 
@@ -376,7 +374,6 @@ while current_question_index < len(questions):
 #print(service_counts)  
 
 #Result Printing Logic
-
 
 # Check and print results
 non_zero_count_services = [service for service, count in service_counts.items() if count > 0]
