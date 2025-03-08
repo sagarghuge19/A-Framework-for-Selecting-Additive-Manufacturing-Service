@@ -1,10 +1,3 @@
-
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[19]:
-
-
 def ask_question(question):
     while True:
         response = input(question + " (yes/no): ").lower()
@@ -31,7 +24,7 @@ questions = [
 
     "Do you have a Conceptual (idea or concept) model?", 
 
-    "Do you need optimization in your design?", 
+    "Do you need further design modification in the available/generated design?", 
 
     "Do you want to 3D print the part?", 
 
@@ -215,7 +208,11 @@ while current_question_index < len(questions):
 
         response = ask_question(current_question) 
 
-        if response == "yes": 
+        if response == "no": 
+            
+            current_question_index = 8 
+
+        else: 
 
             print("Design Optimization") 
 
@@ -234,12 +231,8 @@ while current_question_index < len(questions):
                 if service_counts[selected_service] > 0: 
 
                     service_counts[selected_service] += 1 
-
-            current_question_index = 8 
-
-        else: 
-
-            current_question_index = 8 
+           
+            current_question_index = 7
 
     elif current_question_index == 8: 
 
@@ -453,4 +446,3 @@ elif len(non_zero_count_services) > 1:
 # End of code 
 
 print("End of the process")
-
